@@ -1,0 +1,28 @@
+{
+  "name": "newsapi",
+  "version": "1.0.2",
+  "description": "A node interface for the awesome News API from newsapi.org",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "news",
+    "api",
+    "newsapi",
+    "news api"
+  ],
+  "author": "Ben Zarras",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bzarras/newsapi"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.6"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2",
+    "should": "^11.1.1"
+  }
+}

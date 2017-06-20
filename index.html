@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Map News</title>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script> -->
+	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+			<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />	
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+	<script type='text/javascript' src='js/menu_jquery.js'></script>
+	<link rel="stylesheet" type="text/css" href="css/cssmenu.css"/>
+	<script src="js/leaflet-heat.js"></script>
+	<script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script> 
+     <script src="js/leaflet-google.js"></script> -->
+	
+	<link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>	
+	
+	<link rel="stylesheet" href="css/MarkerCluster.css" />
+	<link rel="stylesheet" href="css/MarkerCluster.Default.css" />
+	<link rel="stylesheet" href="css/L.Control.Sidebar.css" />
+	<script src="js/leaflet.markercluster-src.js"></script>
+	<link rel="stylesheet" href="css/leaflet-search.css" />
+	<link rel="stylesheet" href="style.css" />
+	<style type="text/css">
+      	 
+
+      	}
+		.search-input {
+			font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif
+		}
+		.search-input,
+		.leaflet-control-search {
+			max-width:400px;
+		}
+      	.leaflet-control-zoom-fullscreen { background-image: url(icon-fullscreen.png); }
+		/* on selector per rule as explained here : http://www.sitepoint.com/html5-full-screen-api/ */
+		#map:-webkit-full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
+		#map:-moz-full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
+		#map:full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
+		.leaflet-pseudo-fullscreen { position: fixed !important; width: 100% !important; height: 100% !important; top: 0px !important; left: 0px !important; z-index: 99999; }
+	</style>
+	<script src="Control.FullScreen.js"></script>
+	<!-- <script src="example/realworld.388.js"></script> -->
+	<script src="example/freedomhack.js"></script>
+	<script src="example/mycustommarker.js"></script>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+        <li><a href="real_world.html">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+           <source src="js/leaflet-search.js" type="javascript">
+          <input type="text" class="form-control" placeholder="Search">
+          
+
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    
+	<div id="sidebar">
+		<p class="lorem">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+	</div>
+	<div id=ser>
+	<gcse:search placeholder="Search"></gcse:search>
+	</div>
+	<div id="map"></div>
+	<script src="js/L.Control.Sidebar.js"></script>
+	<script src="js/ActiveLayers.js"></script>
+	<script src="js/dartnews.js"></script>
+	
+
+	<script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false"></script>
+	<script src="js/leaflet-search.js"></script>
+	<script>
+
+	    (function() {
+  var cx = '017643444788069204610:4gvhea_mvga'; // Insert your own Custom Search engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+  gcse.src = (document.location.protocol == 'https' ? 'https:' : 'http:') +
+      '//www.google.com/cse/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+})();
+			var geocoder = new google.maps.Geocoder();
+
+			function googleGeocoding(text, callResponse)
+			{
+				geocoder.geocode({address: text}, callResponse);
+			}
+
+			function filterJSONCall(rawjson)
+			{
+				var json = {},
+					key, loc, disp = [];
+
+				for(var i in rawjson)
+				{
+					key = rawjson[i].formatted_address;
+					
+					loc = L.latLng( rawjson[i].geometry.location.lat(), rawjson[i].geometry.location.lng() );
+					
+					json[ key ]= loc;	//key,value format
+				}
+
+				return json;
+			}
+
+			map.addControl( new L.Control.Search({
+					callData: googleGeocoding,
+					filterJSON: filterJSONCall,
+					markerLocation: true,
+					autoType: false,
+					autoCollapse: true,
+					minLength: 2,
+					zoom: 10
+			}) );
+	</script>
+</body>
+</html>
